@@ -1,7 +1,8 @@
-import logo from './logo.svg';
+import {useState} from "react";
 import './App.css';
 
 function App() {
+  const [visible, setVisibility] = useState(false)
   return (
     <div className="App">
       <div className="basket">
@@ -18,8 +19,10 @@ function App() {
         </div>
           {/*List of items in basket here - component with 'remove item' button*/}
         <div>
-            <button>Buy</button>
-            <p className="confirmation">Purchase complete</p>
+            <button onClick={() => {
+                setVisibility(true)
+            }}>Buy</button>
+            {visible && <p className="confirmation">Purchase complete</p>}
         </div>
       </div>
     </div>
