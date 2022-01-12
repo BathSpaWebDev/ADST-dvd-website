@@ -8,7 +8,7 @@ function App() {
   const [itemTotal, updateItems] = useState(2)
   return (
     <div className="App">
-      <div className="basket">
+      <div className="basket bg-red-400">
         <div>
             <h2>Basket</h2>
         </div>
@@ -16,9 +16,8 @@ function App() {
             <p>Total cost: £{costTotal}</p>
             <p>Number of items: {itemTotal}</p>
         </div>
-        <div>
+        <div classname="hidden sm:block">
             <h4>Items in your basket:</h4>
-        </div>
           {basketList.map((item, index) => {
               return(
               <div key={index}>
@@ -26,6 +25,7 @@ function App() {
               </div>
               )}
           )}
+        </div>
         <div>
             <button onClick={() => {
                 setVisibility(true)
