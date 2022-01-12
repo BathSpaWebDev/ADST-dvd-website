@@ -17,13 +17,19 @@ function App() {
             <p>Number of items: {itemTotal}</p>
         </div>
         <div>
-            <p>Title</p>
-            <p>Price</p>
+            <h4>Items in your basket:</h4>
         </div>
-          {/*List of items in basket here - component with 'remove item' button*/}
+          {basketList.map((item, index) => {
+              return(
+              <div key={index}>
+              <p>{item}</p>
+              </div>
+              )}
+          )}
         <div>
             <button onClick={() => {
                 setVisibility(true)
+                updateBasketList([])
                 updateCost(0)
                 updateItems(0)
             }}>Buy</button>
