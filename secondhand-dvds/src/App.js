@@ -3,7 +3,7 @@ import './App.css';
 
 function App() {
   const [visible, setVisibility] = useState(false)
-  const [basketList, updateBasketList] = useState(["item 1", "item 2", "item 3"])
+  const [basketList, updateBasketList] = useState(["DVD 1", "DVD 2", "DVD 3"])
   const [costTotal, updateCost] = useState(5)
   const [itemTotal, updateItems] = useState(2)
   return (
@@ -45,4 +45,7 @@ export default App;
 
 {/*
 'add to basket' button should update the following in the basket:
-updateBasketList([...basketList, addItem])*/}
+updateBasketList([...basketList, addItem(data.item.title)])
+updateCost(costTotal + itemPrice)
+updateItems(itemTotal + 1)
+*/}
