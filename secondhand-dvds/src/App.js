@@ -3,6 +3,9 @@ import './App.css';
 
 function App() {
   const [visible, setVisibility] = useState(false)
+  const [basketList, updateBasketList] = useState(["item 1", "item 2", "item 3"])
+  const [costTotal, updateCost] = useState(5)
+  const [itemTotal, updateItems] = useState(2)
   return (
     <div className="App">
       <div className="basket">
@@ -10,8 +13,8 @@ function App() {
             <h2>Basket</h2>
         </div>
         <div>
-            <p>Total cost: £0</p>
-            <p>Number of items: 0</p>
+            <p>Total cost: £{costTotal}</p>
+            <p>Number of items: {itemTotal}</p>
         </div>
         <div>
             <p>Title</p>
@@ -21,6 +24,8 @@ function App() {
         <div>
             <button onClick={() => {
                 setVisibility(true)
+                updateCost(0)
+                updateItems(0)
             }}>Buy</button>
             {visible && <p className="confirmation">Purchase complete</p>}
         </div>
@@ -30,3 +35,8 @@ function App() {
 }
 
 export default App;
+
+
+{/*
+'add to basket' button should update the following in the basket:
+updateBasketList([...basketList, addItem])*/}
