@@ -1,5 +1,5 @@
 import {useState} from "react";
-export const Basket = ({movieTitle, price}) => {
+export const Basket = () => {
     const [visible, setVisibility] = useState(false)
     const [basketList, updateBasketList] = useState(["DVD 1", "DVD 2", "DVD 3"])
     const [costTotal, updateCost] = useState(12)
