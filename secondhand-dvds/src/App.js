@@ -1,23 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="text-2xl bg-gray-900 font-extralight text-white min-h-screen flex flex-col items-center py-10 gap-y-10
+    md:items-start xl:items-center md:flex-row md:h-max md:justify-around">
+      <div>
+      <h1>Second hand DVDs</h1>
+      </div>
+      <div className= "md:flex-row bg-cyan-200" ></div>
     </div>
   );
 }
