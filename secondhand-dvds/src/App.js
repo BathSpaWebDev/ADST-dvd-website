@@ -4,20 +4,26 @@ import './App.css';
 function App() {
   const [visible, setVisibility] = useState(false)
   const [basketList, updateBasketList] = useState(["DVD 1", "DVD 2", "DVD 3"])
-  const [costTotal, updateCost] = useState(5)
-  const [itemTotal, updateItems] = useState(2)
+  const [costTotal, updateCost] = useState(12.50)
+  const [itemTotal, updateItems] = useState(3)
   return (
     <div className="App">
-      <div className="basket bg-red-400">
-        <div>
-            <h2>Basket</h2>
+      <div className="text-left w-1/3 bg-indigo-400 p-4 rounded border-2 border-indigo-900 m-12">
+        <div className="p-4">
+            <p className="text-5xl">Basket</p>
         </div>
-        <div>
-            <p>Total cost: £{costTotal}</p>
-            <p>Number of items: {itemTotal}</p>
+        <div className="bg-indigo-100 p-4 border-2 border-indigo-900 rounded m-2">
+            <div className="flex items-center justify-between m-2">
+                <p className="font-semibold">Total cost:</p>
+                <p>£{costTotal}</p>
+            </div>
+            <div className="flex items-center justify-between m-2">
+                <p className="font-semibold">Number of items:</p>
+                <p>{itemTotal}</p>
+            </div>
         </div>
-        <div classname="hidden sm:block">
-            <h4>Items in your basket:</h4>
+        <div className="bg-indigo-100 p-4 border-2 border-indigo-900 rounded m-2 hidden sm:block">
+            <p className="font-semibold">Items in your basket:</p>
           {basketList.map((item, index) => {
               return(
               <div key={index}>
@@ -26,14 +32,14 @@ function App() {
               )}
           )}
         </div>
-        <div>
-            <button onClick={() => {
+        <div className="flex items-center justify-between m-2">
+            <button className="border-2 border-indigo-900 rounded p-4 text-2xl font-bold bg-indigo-200 hover:shadow-2xl" onClick={() => {
                 setVisibility(true)
                 updateBasketList([])
                 updateCost(0)
                 updateItems(0)
             }}>Buy</button>
-            {visible && <p className="confirmation">Purchase complete</p>}
+            {visible && <p className="text-xl text-pink-900">Purchase complete!</p>}
         </div>
       </div>
     </div>
@@ -44,8 +50,12 @@ export default App;
 
 
 {/*
-'add to basket' button should update the following in the basket:
-updateBasketList([...basketList, addItem(data.item.title)])
-updateCost(costTotal + itemPrice)
-updateItems(itemTotal + 1)
+'add to basket' button should do the following:
+<button onClick={() => {
+    updateBasketList([...basketList, addItem(data.item.title)])
+    updateCost(costTotal + itemPrice)
+    updateItems(itemTotal + 1)
+    }
+}
+ALSO UPDATE STOCK NUMBER ON THAT COMPONENT?
 */}
