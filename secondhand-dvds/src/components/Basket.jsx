@@ -1,12 +1,23 @@
 import {useState} from "react";
-export const Basket = () => {
+export const Basket = ({movieTitle, price}) => {
     const [visible, setVisibility] = useState(false)
     const [basketList, updateBasketList] = useState(["DVD 1", "DVD 2", "DVD 3"])
-    const [costTotal, updateCost] = useState(12.50)
+    const [costTotal, updateCost] = useState(12)
     const [itemTotal, updateItems] = useState(3)
     return (
             <div className="App">
-                <div className="text-left w-1/3 bg-indigo-300 p-4 rounded border-2 border-indigo-900 m-12">
+
+
+                <button className="top-left w-1/3 border-2 border-indigo-900 rounded p-4 text-2xl
+        font-bold bg-indigo-200 hover:border-indigo-500 m-6" onClick={() => {
+                    updateBasketList([...basketList, "Midsommar"])
+                    updateCost(costTotal + 5.55)
+                    updateItems(itemTotal + 1)
+                }}>Add to basket</button>
+
+
+
+                <div className="text-left w-1/3 bg-indigo-300 p-4 rounded border-2 border-indigo-900 m-auto">
                     <div className="p-4">
                         <p className="text-5xl">Basket</p>
                     </div>
@@ -24,8 +35,13 @@ export const Basket = () => {
                         <p className="font-semibold">Items in your basket:</p>
                         {basketList.map((item, index) => {
                             return(
-                                <div key={index}>
-                                    <p>{item}</p>
+                                <div key={index} className="flex justify-between">
+                                      <p>{item}</p>
+                                      <button onClick={() => {
+                                          (basketList.splice(index, 1))
+                                          updateBasketList([...basketList])
+
+                                      }}>Remove</button>
                                 </div>
                             )}
                         )}
@@ -43,15 +59,3 @@ export const Basket = () => {
             </div>
         );
     }
-
-
-    {/*
-'add to basket' button should do the following:
-<button onClick={() => {
-    updateBasketList([...basketList, addItem(data.item.title)])
-    updateCost(costTotal + itemPrice)
-    updateItems(itemTotal + 1)
-    }
-}
-ALSO UPDATE STOCK NUMBER ON THAT COMPONENT?
-*/}
