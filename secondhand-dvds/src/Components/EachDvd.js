@@ -1,6 +1,6 @@
 
 export const EachDvd = (props)=>{
-    return <div className="bg-white  p-5 border-2 border-indigo-600 grid grid-cols-6 gap-1 m-5">
+    return <div className="bg-white  p-5 border-2 border-indigo-600 grid md:grid-cols-6 gap-1 m-5">
         <h3>{props.movie.movie}</h3>
         <p>{props.movie.year}</p>
         <p>{props.movie.price}</p>
