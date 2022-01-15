@@ -1,6 +1,7 @@
 import { EachDvd } from "./EachDvd"
 import DvdMovies from "../movies.json"
 
+
 // const DvdMovies =[
 //   {
 //     "id": 1,
@@ -38,16 +39,13 @@ import DvdMovies from "../movies.json"
 //     "bluray": true,
 //     "stock": 13
 //   }]
-export const DvdItems =()=>{
+export const DvdItems =(props)=>{
   const DvdList = DvdMovies.map(movie =>
   <EachDvd
   movie={movie}/>
   )
-  
-    return <div>
-      
-        {DvdList}
-      
-     
+    return <div className="">
+    
+        {DvdList}  
 </div>
 }
