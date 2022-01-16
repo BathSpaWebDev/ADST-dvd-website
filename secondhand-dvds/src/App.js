@@ -1,8 +1,15 @@
+import React, {useState} from 'react'
 import { DvdItems } from "./Components/DvdItem";
 import { GenreFilter } from "./Components/GenreFilter";
 
 
 function App() {
+  const [pickedGenre,setGenre] = useState("Drama")
+
+
+  const GenreFilterHandler=(selectedGenre)=>{
+    setGenre(selectedGenre)
+  }
   
   return (
     <div className="text-xl bg-slate-200 font-normal text-black min-h-screen  items-center p-10 gap-y-10">
@@ -10,7 +17,7 @@ function App() {
       <h1>Second hand DVDs</h1>
       </div>
       <div>
-        <GenreFilter/>
+        <GenreFilter selected={pickedGenre} onGenreChange={GenreFilterHandler}/>
       </div>
       <section className= "text-2xl bg-cyan-200 font-normal text-black items-center">
         

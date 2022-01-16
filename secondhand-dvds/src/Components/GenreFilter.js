@@ -1,15 +1,16 @@
 import { DvdItems } from "./DvdItem"
 import DvdMovies from "../movies.json"
+import App from "../App"
 
 export const GenreFilter= (props)=>{
     const filterChangeHandler =(event)=>{
-        console.log(event.target.value)
+        props.onGenreChange (event.target.value)
 
     }
     return <div className="bg-white p-4">
     <div className="flex flex-row w-full justify-between items-center">
         <label className="font-bold mb-2" >Genre</label>
-        <select onChange={filterChangeHandler}>
+        <select value={props.selected} onChange={filterChangeHandler}>
             <option value="Sci-Fi">Sci-Fi</option>
             <option value="Documentary">Documentary</option>
             <option value="Drama">Drama</option>
