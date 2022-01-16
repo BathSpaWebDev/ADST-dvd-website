@@ -6,8 +6,9 @@ export const GenreFilter= (props)=>{
         console.log(event.target.value)
 
     }
-    return <div className="">
-        <label>Genre</label>
+    return <div className="bg-white p-4">
+    <div className="flex flex-row w-full justify-between items-center">
+        <label className="font-bold mb-2" >Genre</label>
         <select onChange={filterChangeHandler}>
             <option value="Sci-Fi">Sci-Fi</option>
             <option value="Documentary">Documentary</option>
@@ -29,6 +30,7 @@ export const GenreFilter= (props)=>{
             <option value="Film-Noir">Film-Noir</option>
             <option value="Mystery">Mystery</option>
         </select>
+</div>
 </div>
 
 }
