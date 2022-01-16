@@ -1,6 +1,6 @@
 import { DvdItems } from "./DvdItem"
 import DvdMovies from "../movies.json"
-import App from "../App"
+
 
 export const GenreFilter= (props)=>{
     const filterChangeHandler =(event)=>{
