@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { DvdItems } from "./Components/DvdItem";
 import { GenreFilter } from "./Components/GenreFilter";
-
+import { Headers } from './Components/Headers';
 
 function App() {
   const [pickedGenre,setGenre] = useState("Drama")
@@ -10,6 +10,7 @@ function App() {
   const GenreFilterHandler=(selectedGenre)=>{
     setGenre(selectedGenre)
   }
+  const filterdMovies = props
   
   return (
     <div className="text-xl bg-slate-200 font-normal text-black min-h-screen  items-center p-10 gap-y-10">
@@ -23,14 +24,7 @@ function App() {
         
 
         <div className="bg-red-100 sm:p-5 ">
-        <div className =" grid grid-cols-6 gap-1 p-5 m-5 ">
-          
-          <h3 className="hidden md:block">Title</h3>
-      <h3 className="hidden md:block">Year</h3>
-      <h3 className="hidden md:block">Price</h3>
-      <h3 className="hidden md:block">In Stock</h3>
-      <h3 className="hidden md:block">Genre</h3>
-      </div>
+        <Headers/>
 <DvdItems />
         </div>
       </section>
